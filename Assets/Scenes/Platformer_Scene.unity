@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 31244817}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586967887}
+        m_TargetAssemblyTypeName: MenuUIController, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &31244817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1197,6 +1209,7 @@ GameObject:
   - component: {fileID: 586967884}
   - component: {fileID: 586967886}
   - component: {fileID: 586967885}
+  - component: {fileID: 586967887}
   m_Layer: 5
   m_Name: MenuContainer
   m_TagString: Untagged
@@ -1264,6 +1277,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586967883}
   m_CullTransparentMesh: 1
+--- !u!114 &586967887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586967883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04fe17944e2701d489815c0bef7e2818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSceneName: Platformer_Scene
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1380,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1141897501}
     m_Modifications:
+    - target: {fileID: 1757179197740671245, guid: 917495a6866a94144afb43a521a0759c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2210492480982462950, guid: 917495a6866a94144afb43a521a0759c, type: 3}
       propertyPath: speed
       value: 5
@@ -1362,9 +1392,17 @@ PrefabInstance:
       propertyPath: distance
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3364510316207644415, guid: 917495a6866a94144afb43a521a0759c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3599356435530800316, guid: 917495a6866a94144afb43a521a0759c, type: 3}
       propertyPath: m_Name
       value: Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599356435530800316, guid: 917495a6866a94144afb43a521a0759c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8326883432439788958, guid: 917495a6866a94144afb43a521a0759c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1405,6 +1443,10 @@ PrefabInstance:
     - target: {fileID: 8326883432439788958, guid: 917495a6866a94144afb43a521a0759c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082604732513447873, guid: 917495a6866a94144afb43a521a0759c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1955,7 +1997,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 928540371}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 586967887}
+        m_TargetAssemblyTypeName: MenuUIController, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &928540371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2931,6 +2985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1357610025}
   - component: {fileID: 1357610024}
+  - component: {fileID: 1357610026}
   m_Layer: 0
   m_Name: Finish
   m_TagString: Finish
@@ -3005,6 +3060,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1357610026
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357610023}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00078201294, y: 2.036336}
+  m_SpriteTilingProperty:
+    border: {x: 0.140625, y: 0, z: 0.140625, w: 0.3125}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.534729, y: 5.072672}
+  m_EdgeRadius: 0
 --- !u!1 &1414346423
 GameObject:
   m_ObjectHideFlags: 0
@@ -24722,7 +24822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5532490157199188759, guid: f030c1ea84966ab4ead05476af2004a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7517567
+      value: 4.29
       objectReference: {fileID: 0}
     - target: {fileID: 5532490157199188759, guid: f030c1ea84966ab4ead05476af2004a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30109,9 +30209,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1141897501}
     m_Modifications:
+    - target: {fileID: 1757179197740671245, guid: 917495a6866a94144afb43a521a0759c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364510316207644415, guid: 917495a6866a94144afb43a521a0759c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3599356435530800316, guid: 917495a6866a94144afb43a521a0759c, type: 3}
       propertyPath: m_Name
       value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599356435530800316, guid: 917495a6866a94144afb43a521a0759c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8326883432439788958, guid: 917495a6866a94144afb43a521a0759c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30152,6 +30264,10 @@ PrefabInstance:
     - target: {fileID: 8326883432439788958, guid: 917495a6866a94144afb43a521a0759c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082604732513447873, guid: 917495a6866a94144afb43a521a0759c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30205,6 +30321,10 @@ PrefabInstance:
     - target: {fileID: 973440441028003529, guid: c5b199747162f92429977f724d30c0cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171039846283103729, guid: c5b199747162f92429977f724d30c0cf, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3171039846283103729, guid: c5b199747162f92429977f724d30c0cf, type: 3}
       propertyPath: distance

@@ -8,12 +8,14 @@ namespace Spatialminds.Platformer
 
         [Header("Movement Settings")]
         [SerializeField] private MoveDirection moveDirection = MoveDirection.Left;
-        [SerializeField] private float distance = 3f; // How many units to move
+        [SerializeField] private float distance = 3f;
         [SerializeField] private float speed = 2f;
 
         private Vector3 startPos;
         private Vector3 targetPos;
         private bool movingToTarget = true;
+        private Transform carriedPlayer;
+        private Vector3 playerOffset;
 
         void Start()
         {
@@ -25,6 +27,17 @@ namespace Spatialminds.Platformer
         void Update()
         {
             Move();
+            MoveCarriedPlayer();
+        }
+
+        void MoveCarriedPlayer()
+        {
+            if (carriedPlayer != null)
+            {
+                Vector3 newPos = transform.position + playerOffset;
+                newPos.y = carriedPlayer.position.y;
+                carriedPlayer.position = newPos;
+            }
         }
 
         void Move()
@@ -34,11 +47,31 @@ namespace Spatialminds.Platformer
 
             if (Vector3.Distance(transform.position, destination) < 0.01f)
             {
-                movingToTarget = !movingToTarget; // Reverse direction
+                movingToTarget = !movingToTarget;
             }
         }
 
-        // Optional: Draw gizmos to visualize movement in the editor
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                if (collision.contacts[0].normal.y < -0.5f)
+                {
+                    carriedPlayer = collision.transform;
+                    playerOffset = carriedPlayer.position - transform.position;
+                    playerOffset.y = 0;
+                }
+            }
+        }
+
+        void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player") && carriedPlayer != null)
+            {
+                carriedPlayer = null;
+            }
+        }
+
         void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
