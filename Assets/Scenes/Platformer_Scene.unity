@@ -2643,7 +2643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3171039846283103729, guid: c5b199747162f92429977f724d30c0cf, type: 3}
       propertyPath: distance
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7317888863585772207, guid: c5b199747162f92429977f724d30c0cf, type: 3}
       propertyPath: m_Name
